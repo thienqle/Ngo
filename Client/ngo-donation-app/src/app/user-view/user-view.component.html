@@ -1,0 +1,10 @@
+<div class="container mt-5 mb-5">
+    <div class="mb-5">
+      <h5>Click on any on Donation Type to continue </h5>
+    </div>
+    <div>
+    <button type="button" class="btn btn-secondary btn-lg ml-2 mr-2" *ngFor = "let donationtype of donationtypes" (click)="onClick()">
+      TYPE {{donationtype.id}}
+    </button>
+  </div>
+</div>

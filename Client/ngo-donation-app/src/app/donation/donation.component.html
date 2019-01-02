@@ -1,0 +1,35 @@
+
+  <!--<ul class="heroes">
+    <table><th>Id</th><th>Name</th><th>Date</th><th>Amount</th><th>Donation Type</th>
+    <tr *ngFor = "let donation of donations">
+      <td>{{donation.id}}</td><td>{{donation.name}}</td><td>{{donation.date}}</td><td>{{donation.amount}}</td><td>{{donation.donation_type}}</td>
+    </tr>
+  </table>
+  </ul>-->
+    <div class="text-center container-fluid">
+    <div class="w-75 text-center mx-auto ml-5 mt-5 mb-4">
+        <h5>Donation Managerment</h5>
+    </div>
+    <div class="w-75 mx-auto ml-5 mb-5">
+    <table class="table text-left">
+      <thead class="thead-light">
+        <tr>
+          <!--<th scope="col">ID</th> -->
+          <th scope="col">Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Donation Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let donation of donations">
+          <!-- <th scope="row">{{donation.id}}</th> -->
+          <td>{{donation.name}}</td>
+          <td>{{donation.date}}</td>
+          <td>{{donation.amount}}</td>
+          <td>{{donation.donation_type}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div [ngSwitch]="auth.status" class="container-fluid">
+  <div *ngSwitchCase="0" class="row">
+    <div class="col">
+      <app-visitor></app-visitor>
+    </div>
+  </div>
+  <div *ngSwitchCase="1" class="row">
+    <div class="col">
+      <app-login></app-login>
+    </div>
+  </div>
+  <div *ngSwitchCase="2" class="row">
+    <div class="col col-2">
+      <app-menu></app-menu>
+    </div>
+    <div class="col">
+      <app-section></app-section>
+    </div>
+  </div>
+  <div>
+    <div *ngDefault? class="col">
+      <p>default</p>
+    </div>
+  </div>
+</div>

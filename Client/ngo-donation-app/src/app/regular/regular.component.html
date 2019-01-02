@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div [ngSwitch]="auth.status" class="container-fluid">
+    <div class="row">
+      <div *ngSwitchCase="0" class="col text-center" @translateUp>
+        <app-personal-information ></app-personal-information>
+      </div>
+      <div *ngSwitchCase="1" class="col text-center" @translateUp>
+          <app-gifts></app-gifts>
+      </div>
+      <div *ngSwitchCase="2" class="col text-center" @translateUp>
+          <app-order></app-order>
+      </div>
+    <div>
+      <div *ngDefault? class="col">
+        <p>default</p>
+      </div>
+    </div>
+  </div>

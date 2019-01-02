@@ -1,0 +1,31 @@
+.whov:hover { background-color: #00695c!important; }
+.view {
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 500px;
+}
+.secondbase {
+    background-color: rgba(255,255,255,.6); 
+    margin-top: -90px;
+}
+
+.color-white {
+	color: whitesmoke;
+}
+
+.round_button {
+	/*border: none;*/
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 2px 2px 2px 2px;
+	border-radius: 50%;
+  }
+
+/*Hide drop down arrow*/
+.dropdown-toggle::after {
+    display:none;
+}
+  

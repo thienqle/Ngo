@@ -1,0 +1,90 @@
+<div class="card text-center w-50 mx-auto mt-5 mb-5">
+    
+    <div class="card-body" >
+      <div class="pb-4">
+          <h5 *ngIf="auth.managerment_status==1"> Register for New User</h5>
+          <h5 *ngIf="auth.managerment_status==2"> Edit User</h5>
+      </div>
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+      <form (ngSubmit)="f.form.valid && submit()" #f="ngForm">
+          <div *ngIf="auth.managerment_status==1" class="form-group col">
+              <input type="text" name="username" class="form-control" [(ngModel)]="username" placeholder="Username" #name="ngModel" required/>
+              <!--Start of validate -->
+              <div *ngIf="f.submitted && name.invalid || (name.dirty || name.touched)"  class="text-danger text-left">
+                  <div *ngIf="name.errors?.required">
+                    *Username is required.
+                  </div>
+              </div>
+              <!--Start of validate -->
+          </div>
+               
+        <div class="form-group col text-left">
+            <label *ngIf="auth.managerment_status==2" for="firstname">First Name</label>
+            <input id="firstname" type="text" name="firstName" class="form-control" [(ngModel)]="firstName" placeholder="FirstName" #fname="ngModel" required/>
+            <!--Start of validate -->
+            <div *ngIf="f.submitted && fname.invalid || (fname.dirty || fname.touched)"  class="text-danger text-left">
+                <div *ngIf="fname.errors?.required">
+                  *First Name is required.
+                </div>
+            </div>
+            <!--Start of validate -->
+        </div>
+        <div class="form-group col text-left">
+            <label *ngIf="auth.managerment_status==2" for="lastname">Last Name</label>
+            <input type="text" name="lastName" id="lastname" class="form-control" [(ngModel)]="lastName" placeholder="LastName" #lname="ngModel" required/>
+            <!--Start of validate -->
+            <div *ngIf="f.submitted && lname.invalid || (lname.dirty || lname.touched)"  class="text-danger text-left">
+                <div *ngIf="lname.errors?.required">
+                  *Last Name is required.
+                </div>
+            </div>
+            <!--Start of validate -->
+        </div>
+        <div class="form-group col text-left">
+          <label *ngIf="auth.managerment_status==2" for="email">Email</label>
+          <input type="email" name="email" id="email" class="form-control" [(ngModel)]="email" placeholder="Email" #em="ngModel" required email/>
+          <!--Start of validate -->
+          <div *ngIf="f.submitted && em.invalid || (em.dirty || em.touched)"  class="text-danger text-left">
+              <div *ngIf="em.errors?.required">
+                *Email is required.
+              </div>
+              <div *ngIf="em.errors?.email">
+                *Email must be a valid email address.
+              </div>
+          </div>
+          <!--Start of validate -->
+        </div>
+        <div *ngIf="auth.managerment_status==1" class="form-group col">
+          <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Password" #pass="ngModel" required/>
+          <!--Start of validate -->
+          <div *ngIf="f.submitted && pass.invalid || (pass.dirty || pass.touched)"  class="text-danger text-left">
+              <div *ngIf="pass.errors?.required">
+                *Password is required.
+              </div>
+          </div>
+          <!--Start of validate -->
+        </div>
+        <div class="form-group col text-left">
+          <label *ngIf="auth.managerment_status==2" for="tpe">Role</label>
+          <select id="tpe" class="form-control form-control" [(ngModel)]="type" #role="ngModel" [ngModelOptions]="{standalone: true}" required>
+              <option value=1 [selected]="type==1">Admin</option>
+              <option value=2 [selected]="type==2">Regular User</option>
+          </select>
+          <!--Start of validate -->
+          <div *ngIf="f.submitted && role.invalid || (role.dirty || role.touched)"  class="text-danger text-left">
+              <div *ngIf="role.errors?.required">
+                *Role is required.
+              </div>
+          </div>
+          <!--Start of validate -->
+        </div>
+          
+        <div class="form-group col">
+          <div class="row">
+          <div class="col"><button class="btn btn-primary mr-2 btn-block" (click)="onCancel()">Cancel</button></div>
+          <div class="col"><button class="btn btn-primary ml-2 btn-block" type="submit">Save</button></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

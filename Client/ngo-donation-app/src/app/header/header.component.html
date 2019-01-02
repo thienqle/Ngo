@@ -1,0 +1,57 @@
+<nav class="navbar navbar-info bg-info navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand color-white" href="">NGO</a>
+    </div>
+    <div *ngIf='auth.isLogin()'> 
+      <div class="dropdown pull-right">
+      <button class="btn btn-outline-light dropdown-toggle round_button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>{{ getUser() | firstchar }}</b>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <button class="dropdown-item" (click)="logout()">
+              Logout
+          </button>
+          <button *ngIf="auth.user_auth.type=='1'" class="dropdown-item" (click)="dashboard()">
+              Dashboard
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--<div class="navbar-toggleable-sm collapse pull-md-right text-xs-center" id="collapsenav"> 
+    </div>
+    -->
+  </div>
+</nav>
+<!--<nav class="navbar navbar-fixed-top navbar-bootsnipp animate" role="navigation" style="z-index: 9999999">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="animbrand">
+        <a class="navbar-brand animate" href="">NGO</a>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown dropdown-right">
+          <a href="#" class="dropdown-toggle " data-toggle="dropdown">Nnaemeka(Admin) <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#" class="" (click)="auth.logout()">Logout <span class="pull-right glyphicon glyphicon-log-out"></span></a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+-->

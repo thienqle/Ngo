@@ -1,0 +1,35 @@
+<div *ngIf='!isLogin(); else logged_in' class="card text-center w-25 mx-auto mt-5 mb-5">
+  <div class="card-body" >
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    <form (ngSubmit)="submit()">
+      <div class="form-group col  pt-4">
+        <input type="text" name="username" class="form-control" [(ngModel)]="username" placeholder="Username" #name="ngModel" required/>
+        <!--Start of validate -->
+        <div *ngIf="name.invalid && (name.dirty || name.touched)"  class="text-danger text-left">
+          <div *ngIf="name.errors.required">
+            *Username is required.
+          </div>
+        </div>
+        <!--Start of validate -->
+      </div>
+      <div class="form-group col">
+        <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Password" #pass="ngModel" required/>
+        <!--Start of validate -->
+        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)"  class="text-danger text-left">
+            <div *ngIf="pass.errors.required">
+              *Password is required.
+            </div>
+        </div>
+         <!--Start of validate -->
+      </div>
+      <div class="form-group col">
+        <button class="btn btn-primary btn-block" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+<ng-template #logged_in>
+    <div class="alert alert-success" role="alert">
+        You are Logged in successfully! 
+    </div>
+</ng-template>

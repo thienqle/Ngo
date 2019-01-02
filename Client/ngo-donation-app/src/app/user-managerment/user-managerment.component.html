@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div [ngSwitch]="auth.managerment_status" class="container-fluid">
+    <div class="row">
+      <div *ngSwitchCase="0" class="col text-center">
+        <app-user-table></app-user-table>
+      </div>
+      <div *ngSwitchCase="1" class="col text-center">
+        <app-register></app-register>
+      </div>
+      <div *ngSwitchCase="2" class="col text-center">
+          <app-register></app-register>
+        </div>
+    <div>
+      <div *ngDefault? class="col">
+        <p>default</p>
+      </div>
+    </div>
+</div>
